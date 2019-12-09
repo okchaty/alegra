@@ -10,6 +10,9 @@ class TestItem:
         response = alegra.Item.create(
             name="Cobro por servicio tecnológico",
             price=200,
+            inventory={
+                "unit": "service",
+            }
         )
         assert response.status_code == 201
         # Retrieve item.
