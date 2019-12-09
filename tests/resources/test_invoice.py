@@ -13,7 +13,7 @@ class TestInvoice:
             client=1,
             currency={
                 "code": "USD",
-                "code": 3350,
+                "exchangeRate": 3350,
             },
             items=[{
                 "id": 1,
