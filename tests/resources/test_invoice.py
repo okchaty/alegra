@@ -30,18 +30,39 @@ class TestInvoice:
         invoice_id = response.json().get("id")
         response = alegra.Invoice.retrieve(invoice_id)
         assert response.status_code == 200
-        # Send invoice by email.
-        response = alegra.Invoice.email(invoice_id)
-        assert response.status_code == 200
-        # Open invoice.
-        response = alegra.Invoice.open(invoice_id)
-        assert response.status_code == 200
         # Modify invoice.
         response = alegra.Invoice.modify(
             resource_id=invoice_id,
-            price=100,
+            payments=[{
+                "date": "2019-12-09",
+                "amount": 778,
+                "paymentMethod": "transfer",
+                "currency": {
+                    "code": "USD",
+                    "exchangeRate": 3350,
+                },
+            }],
         )
         assert response.status_code == 200
+        # Send invoice by email.
+        response = alegra.Invoice.email(
+            resource_id=invoice_id,
+            emails=["chaty@yopmail.com"],
+            sendCopyToUser=True,
+            invoiceType="copy",
+        )
+        assert response.status_code == 400
+        # Open invoice.
+        response = alegra.Invoice.open(
+            resource_id=invoice_id,
+            stamp={
+                "generateStamp": True,
+            }
+        )
+        assert response.status_code == 400
         # Void invoice.
-        response = alegra.Invoice.void(invoice_id)
-        assert response.status_code == 200
+        response = alegra.Invoice.void(
+            resource_id=invoice_id,
+            cause="testing",
+        )
+        assert response.status_code == 400
