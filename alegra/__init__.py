@@ -1,4 +1,5 @@
 from alegra.resources import Contact
+from alegra.resources import Invoice
 from alegra.resources import Item
 
 user = None
