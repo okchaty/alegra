@@ -3,8 +3,6 @@ import alegra
 
 class TestContact:
     def test_crud(self):
-        alegra.user = "developer@okchaty.com"
-        alegra.token = "45a1bcb2cc25d9c60196"
         # List contacts.
         response = alegra.Contact.list()
         assert response.status_code == 200
