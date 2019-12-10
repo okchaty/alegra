@@ -1,5 +1,5 @@
 # Alegra in Python
-Wrapper in python for [Alegra]*(alegra.com).
+Wrapper in python for [Alegra]*(https://alegra.com).
 
 ## Usage
 
@@ -18,17 +18,16 @@ alegra.Contact.list()
 
 # Create contact.
 alegra.Contact.create(
-		name="Chaty",
-		identification={
-				"type": "RUC",
-				"number": "20000000000",
-		},
-		email="developer@okchaty.com",
-		type=["client"],
-		address={
-				"address": "Jr. Neptuno 777",
-				"city": "Lima, Peru",
-		},
+  name="Chaty",
+  identification={
+    "type": "RUC", "number": "20000000000",
+  },
+  email="developer@okchaty.com",
+  type=["client"],
+  address={
+    "address": "Jr. Neptuno 777",
+    "city": "Lima, Peru",
+  },
 )
 
 # Retrieve contact.
@@ -36,11 +35,11 @@ alegra.Contact.retrieve(123)
 
 # Modify contact.
 alegra.Contact.modify(
-		resource_id=contact_id,
-		identification={
-				"type": "RUC",
-				"number": "20000000001",
-		},
+  resource_id=contact_id,
+  identification={
+    "type": "RUC",
+    "number": "20000000001",
+  },
 )
 
 # Delete contact.
