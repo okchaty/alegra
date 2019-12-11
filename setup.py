@@ -1,8 +1,14 @@
+import os
 import setuptools
 
 
-with open("README.md") as f:
-    README = f.read()
+here = os.path.abspath(os.path.dirname(__file__))
+os.chdir(here)
+
+with open(
+    os.path.join(here, "LONG_DESCRIPTION.rst"), "r", encoding="utf-8"
+) as fp:
+    long_description = fp.read()
 
 setuptools.setup(
     author="Chaty",
@@ -10,8 +16,8 @@ setuptools.setup(
     name="alegra",
     license="MIT",
     description="alegra is a python package for connect to the Alegra's API.",
-    version="0.0.2",
-    long_description=README,
+    version="0.0.3",
+    long_description=long_description,
     url="https://github.com/okchaty/alegra",
     packages=setuptools.find_packages(exclude=["tests", "tests.*"]),
     python_requires=">=3.5",
