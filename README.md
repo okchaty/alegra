@@ -1,5 +1,5 @@
 # Alegra in Python
-Wrapper in python for [Alegra]*(https://alegra.com).
+Wrapper in python for [Alegra](https://alegra.com).
 
 ## Usage
 
