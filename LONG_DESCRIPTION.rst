@@ -11,8 +11,9 @@ You can install this package by using the pip tool and installing:
 
     $ pip install alegra
 
+
 Usage
-----
+-----
 
 The library needs to be configured with your user and token which is
 available in your Alegra Account: https://app.alegra.com/configuration/api
@@ -20,6 +21,7 @@ available in your Alegra Account: https://app.alegra.com/configuration/api
 Set **alegra.user** and **alegra.token** to their values:
 
 .. code:: python
+
     import alegra 
 
     alegra.user = "...@..."
@@ -56,6 +58,7 @@ Set **alegra.user** and **alegra.token** to their values:
 
     # Delete contact.
     alegra.Contact.delete(123)
+
 
 Using the Alegra API
 --------------------
