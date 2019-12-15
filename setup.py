@@ -16,7 +16,7 @@ setuptools.setup(
     name="alegra",
     license="MIT",
     description="alegra is a python package for connect to the Alegra's API.",
-    version="0.0.3",
+    version="0.1.0",
     long_description=long_description,
     url="https://github.com/okchaty/alegra",
     packages=setuptools.find_packages(exclude=["tests", "tests.*"]),
