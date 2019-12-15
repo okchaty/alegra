@@ -17,7 +17,7 @@ class APIRequestor(object):
         user_token = "{}:{}".format(self.user, self.token).encode()
         authorization_code = base64.b64encode(user_token).decode("utf-8")
         return "Basic {}".format(authorization_code)
-    
+
     def request(self, method, url, **kwargs):
         """Injects auth headers."""
         headers = {
